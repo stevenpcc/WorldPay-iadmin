@@ -1,24 +1,29 @@
-== WorldPay iadmin Library
+== WorldPay iadmin Class
 
 WorldPay offer an api to do some remote administration tasks relating to FuturePay. The iadmin
 api is not available by default. You must contact WorldPay and ask them to activate it for you. A
 new installation id and password will be provided access the api. The api allows you to cancel a
-FuturePay agreement, change the start date, debit an agreement, or modify the amount. See the WorldPay
-docs for a list of error responses you can expect.
+FuturePay agreement, change the start date, debit an agreement, or modify the amount. 
 
-WorldPay Docs: http://www.rbsworldpay.com/support/kb/bg/recurringpayments/rpfp8000.html
+This class provides a simple lightweight interface to this api.
+
+See the WorldPay docs for a list of error responses you can expect:
+
+http://www.rbsworldpay.com/support/kb/bg/recurringpayments/rpfp8000.html
 
 == Requirements
 
 * Ruby 1.8.6 with openssl (Should work with previous versions. I've just not tested it)
 * Valid WorldPay account
-* Fakeweb gem for running tests
+* Fakeweb gem (only if running the tests)
 
 == Installation
 
 gem install worldpay_iadmin
 
 == Example Usage:
+
+	require 'worldpay_iadmin'
 
 	# Create a new WorldpayIadmin instance
 	@installation_id = "12345"
