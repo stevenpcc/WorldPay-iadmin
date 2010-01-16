@@ -50,7 +50,7 @@ class WorldpayIadminTest < Test::Unit::TestCase
     assert create_worldpay_iadmin("Y,transId,A,rawAuthMessage,Payment successful").debit("232323", 9.99)
   end
   
-  def test_debit
+  def test_debit_fail
     assert !create_worldpay_iadmin("E,Agreement already finished").debit("232323", 9.99)
   end
 
