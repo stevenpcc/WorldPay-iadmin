@@ -71,9 +71,6 @@ class WorldpayIadmin
   require 'net/https'
   require 'uri'
   
-  # http://www.rbsworldpay.com/support/kb/bg/recurringpayments/rpfp8000.html
-  
-  
   attr_accessor :worldpay_id, :password, :test_mode, :production_url, :test_url
   
   def initialize(worldpay_id, password, test_mode=false)

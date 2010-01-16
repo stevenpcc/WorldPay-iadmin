@@ -1,3 +1,7 @@
+worldpay_iadmin (1.0.1)
+
+  * Fixed a bug in worldpay_iadmin_test.rb [Steven Cummings]
+
 worldpay_iadmin (1.0.0)
 
   * initial import [Steven Cummings]
