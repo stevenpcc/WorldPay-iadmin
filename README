@@ -14,6 +14,10 @@ WorldPay Docs: http://www.rbsworldpay.com/support/kb/bg/recurringpayments/rpfp80
 * Valid WorldPay account
 * Fakeweb gem for running tests
 
+== Installation
+
+gem install worldpay_iadmin
+
 == Example Usage:
 
 	# Create a new WorldpayIadmin instance
