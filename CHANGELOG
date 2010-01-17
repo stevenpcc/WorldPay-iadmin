@@ -1,3 +1,8 @@
+worldpay_iadmin (1.0.2)
+
+  * Fixed a serious bug in iadmin_url method. Was returning test url in production mode
+    and production url in test mode. Added tests to prevent future mistake [Steven Cummings]
+
 worldpay_iadmin (1.0.1)
 
   * Fixed a bug in worldpay_iadmin_test.rb [Steven Cummings]

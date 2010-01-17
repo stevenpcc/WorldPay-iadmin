@@ -77,8 +77,8 @@ class WorldpayIadmin
     @worldpay_id = worldpay_id
     @password = password
     @test_mode = test_mode
-    @production_url = "https://secure-test.wp3.rbsworldpay.com/wcc/iadmin"
-    @test_url = "https://secure.wp3.rbsworldpay.com/wcc/iadmin"
+    @production_url = "https://secure.wp3.rbsworldpay.com/wcc/iadmin"
+    @test_url = "https://secure-test.wp3.rbsworldpay.com/wcc/iadmin"
   end
   
   # Returns the url that the command will be sent to

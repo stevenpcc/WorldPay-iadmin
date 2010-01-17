@@ -9,17 +9,17 @@ require 'fakeweb'
 class WorldpayIadminTest < Test::Unit::TestCase
   
   def create_worldpay_iadmin(response)
-    @worldpay_iadmin = WorldpayIadmin.new("123434", "password")
-    FakeWeb.register_uri(:any, @worldpay_iadmin.iadmin_url, :body => response)
-    @worldpay_iadmin
+    worldpay_iadmin = WorldpayIadmin.new("123434", "password")
+    FakeWeb.register_uri(:any, worldpay_iadmin.iadmin_url, :body => response)
+    worldpay_iadmin
   end
   
   def test_initialize
-    @worldpay_iadmin = WorldpayIadmin.new("123434", "password", true)
+    worldpay_iadmin = WorldpayIadmin.new("123434", "password", true)
     
-    assert_equal "123434", @worldpay_iadmin.worldpay_id
-    assert_equal "password", @worldpay_iadmin.password
-    assert_equal true, @worldpay_iadmin.test_mode
+    assert_equal "123434", worldpay_iadmin.worldpay_id
+    assert_equal "password", worldpay_iadmin.password
+    assert_equal true, worldpay_iadmin.test_mode
   end
   
   def test_cancel_agreement
@@ -52,6 +52,16 @@ class WorldpayIadminTest < Test::Unit::TestCase
   
   def test_debit_fail
     assert !create_worldpay_iadmin("E,Agreement already finished").debit("232323", 9.99)
+  end
+  
+  def test_iadmin_url_production
+    worldpay_iadmin = WorldpayIadmin.new("123434", "password")
+    assert_equal "https://secure.wp3.rbsworldpay.com/wcc/iadmin", worldpay_iadmin.iadmin_url
+  end
+  
+  def test_iadmin_url_test
+    worldpay_iadmin = WorldpayIadmin.new("123434", "password", true)
+    assert_equal "https://secure-test.wp3.rbsworldpay.com/wcc/iadmin", worldpay_iadmin.iadmin_url
   end
 
 end
